@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LatAm Foresight Studio — Prospectiva Estratégica</title>
+    <meta name="description" content="LatAm Foresight Studio ofrece consultoría boutique en prospectiva estratégica, análisis geopolítico, inteligencia de datos y salud planetaria.">
+    <meta property="og:title" content="LatAm Foresight Studio — Prospectiva Estratégica">
+    <meta property="og:description" content="LatAm Foresight Studio ofrece consultoría boutique en prospectiva estratégica, análisis geopolítico, inteligencia de datos y salud planetaria.">
+    <meta property="og:image" content="https://placehold.co/1200x630/D1CFCB/2A2B8D?text=LatAm+Foresight+Studio+Preview">
+    <meta property="og:url" content="https://luxanima.com/latamforesightstudio">
+    <link rel="canonical" href="https://luxanima.com/latamforesightstudio">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Anek+Latin:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            /* Paleta ajustada para LatAm Foresight: más serios, con acento sutil */
+            --color-fondo: #F0F4F8; /* Un gris azulado muy claro */
+            --color-texto: #1A202C; /* Gris oscuro para texto principal */
+            --color-destello: #A0B9D6; /* Un azul grisáceo más frío como acento */
+            --color-borde: #CBD5E0; /* Gris claro para bordes */
+            --color-hero-bg-start: #2C3E50; /* Azul oscuro para degradado hero */
+            --color-hero-bg-end: #34495E; /* Un poco más claro */
+        }
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: 'Anek Latin', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6); /* Fondo blanco translúcido */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(var(--color-borde), 0.4); /* Borde con color de la paleta */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--color-destello); /* Borde acento al hover */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(var(--color-texto), 0.05);
+        }
+        .btn-primary {
+            @apply inline-block bg-transparent text-texto border-2 border-texto rounded-full px-8 py-3 font-display font-semibold uppercase tracking-widest transition-all duration-300;
+        }
+        .btn-primary:hover {
+            @apply bg-texto text-fondo shadow-lg;
+        }
+        .btn-primary:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--color-destello), 0 0 0 6px var(--color-texto);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <header id="nav-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h4 class="font-display text-2xl font-bold tracking-wider text-white" id="header-title">LatAm Foresight Studio</h4>
+            <nav role="navigation" aria-label="Menú principal" class="hidden md:flex space-x-8 font-display uppercase tracking-widest text-sm">
+                <a href="https://luxanima-tawny.vercel.app/" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la página principal de Lux Animæ" target="_blank">Lux Animæ</a>
+                <a href="https://landing-e.vercel.app/" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la página de NectarLux Studio" target="_blank">NectarLux Studio</a>
+                <a href="https://landing-psy.vercel.app/" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la página de NectarLux Care" target="_blank">NectarLux Care</a>
+                <a href="#hero" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la sección de inicio">Inicio</a>
+                <a href="#about" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la sección sobre nosotros">Sobre Nosotros</a>
+                <a href="#services" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la sección de servicios">Servicios</a>
+                <a href="#approach" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la sección de nuestro enfoque">Nuestro Enfoque</a>
+                <a href="#contact" class="nav-link hover:text-destello transition-colors text-white" aria-label="Ir a la sección de contacto">Contacto</a>
+            </nav>
+            <!-- Mobile Hamburger Button - Not implemented for simplicity in this standalone page -->
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center relative text-center text-white p-4 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-hero-bg-start)] via-[var(--color-hero-bg-end)] to-[var(--color-hero-bg-start)] z-0" role="img" aria-label="Fondo degradado místico de LatAm Foresight Studio"></div>
+            <!-- Removed hero-bg image as requested -->
+            <div class="relative z-10 flex flex-col items-center">
+                <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 fade-in" style="transition-delay: 200ms;">LatAm Foresight Studio</h1>
+                <p class="max-w-3xl text-lg md:text-xl text-white/80 mb-12 leading-relaxed fade-in" style="transition-delay: 400ms;">Anticipando futuros escenarios para decisiones informadas en entornos complejos.</p>
+                <a href="#services" class="btn-primary !text-white !border-white hover:!bg-white hover:!text-texto fade-in scroll-link" style="transition-delay: 600ms;" aria-label="Explorar nuestros servicios">Explorar Servicios</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <div class="fade-in">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Nuestra Propuesta de Valor</h2>
+                    <p class="text-xl md:text-2xl text-texto/80 leading-relaxed mb-8 font-light">Inteligencia estratégica anticipativa.</p>
+                    <p class="text-base md:text-lg text-texto/70 leading-loose">
+                        En LatAm Foresight Studio, combinamos métodos de *futures thinking* con análisis basado en evidencia para guiar estrategias de largo plazo. Ayudamos a gobiernos, ONGs y organizaciones a identificar señales de cambio, mapear escenarios alternativos y visualizar riesgos y oportunidades emergentes. No se trata de predecir el futuro con certeza, sino de explorar futuros posibles y probables que generen *insights* accionables en el presente.
+                    </p>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="glass-card p-6 rounded-lg fade-in" style="transition-delay: 100ms;">
+                            <h3 class="font-display text-2xl font-semibold mb-3">Prospectiva Estratégica</h3>
+                            <p class="text-texto/70 text-sm">Anticipamos cambios para que tomes decisiones proactivas y resilientes.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-lg fade-in" style="transition-delay: 200ms;">
+                            <h3 class="font-display text-2xl font-semibold mb-3">Análisis Geopolítico</h3>
+                            <p class="text-texto/70 text-sm">Comprendemos las dinámicas globales para contextualizar tus estrategias.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-lg fade-in" style="transition-delay: 300ms;">
+                            <h3 class="font-display text-2xl font-semibold mb-3">Salud Planetaria</h3>
+                            <p class="text-texto/70 text-sm">Integramos la sostenibilidad ecológica y el bienestar humano en cada análisis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 md:py-24 bg-texto/5">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Nuestros Servicios</h2>
+                    <p class="max-w-3xl mx-auto text-texto/70 text-lg">Soluciones personalizadas para iluminar tu camino hacia el futuro.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 flex flex-col fade-in">
+                        <h3 class="font-display text-2xl font-bold mb-3">Estudios de Tendencias y Horizon Scanning</h3>
+                        <p class="text-texto/70 leading-relaxed mb-4">Identificación continua de señales de cambio y tendencias emergentes.</p>
+                        <button class="btn-primary mt-auto" aria-label="Conocer estudios de tendencias">Conocer Más</button>
+                    </div>
+                    <div class="glass-card p-8 flex flex-col fade-in">
+                        <h3 class="font-display text-2xl font-bold mb-3">Talleres de Planeación de Escenarios</h3>
+                        <p class="text-texto/70 leading-relaxed mb-4">Sesiones interactivas para visualizar futuros posibles y desarrollar estrategias robustas.</p>
+                        <button class="btn-primary mt-auto" aria-label="Participar en talleres de escenarios">Participar</button>
+                    </div>
+                    <div class="glass-card p-8 flex flex-col fade-in">
+                        <h3 class="font-display text-2xl font-bold mb-3">Análisis de Riesgos Geopolíticos</h3>
+                        <p class="text-texto/70 leading-relaxed mb-4">Evaluación de la influencia de dinámicas internacionales en tus proyectos y operaciones.</p>
+                        <button class="btn-primary mt-auto" aria-label="Solicitar análisis de riesgos">Solicitar Análisis</button>
+                    </div>
+                    <div class="glass-card p-8 flex flex-col fade-in">
+                        <h3 class="font-display text-2xl font-bold mb-3">Asesoría en Políticas de Salud Planetaria</h3>
+                        <p class="text-texto/70 leading-relaxed mb-4">Guía para alinear tus políticas con la sostenibilidad ecológica y el bienestar humano a largo plazo.</p>
+                        <button class="btn-primary mt-auto" aria-label="Consultar sobre salud planetaria">Consultar</button>
+                    </div>
+                    <div class="glass-card p-8 flex flex-col fade-in">
+                        <h3 class="font-display text-2xl font-bold mb-3">Capacitación en Prospectiva</h3>
+                        <p class="text-texto/70 leading-relaxed mb-4">Desarrollo de capacidades internas en tu organización para el pensamiento de futuros.</p>
+                        <button class="btn-primary mt-auto" aria-label="Inscribirse en capacitación">Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <div class="fade-in">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Nuestro Enfoque Único</h2>
+                    <p class="text-xl md:text-2xl text-texto/80 leading-relaxed mb-8 font-light">La visión del fundador: esotérica, minimalista y de lujo espiritual.</p>
+                    <p class="text-base md:text-lg text-texto/70 leading-loose">
+                        La perspectiva del fundador aporta una intuición aguda para detectar patrones sutiles y conectar señales aparentemente desconectadas, integrando saberes espirituales para enriquecer la comprensión de futuros deseables. Nuestro enfoque minimalista se traduce en entregables claros y estéticamente impecables, destilando la complejidad en conclusiones esenciales. Además, la integridad de valores y la visión espiritual se reflejan en un compromiso genuino con el impacto positivo y proyectos alineados con propósitos elevados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-32 bg-texto/5">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <div class="fade-in">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Conectate con el Futuro</h2>
+                    <p class="text-xl md:text-2xl text-texto/80 leading-relaxed mb-8 font-light">Estamos listos para acompañarte en la anticipación.</p>
+                    <p class="text-base md:text-lg text-texto/70 leading-loose mb-8">
+                        Si tu organización busca navegar la incertidumbre y tomar decisiones estratégicas con una visión clara del mañana, contactanos.
+                    </p>
+                    <a href="mailto:mbustosvillar@gmail.com" class="btn-primary" aria-label="Enviar un correo electrónico a LatAm Foresight Studio">Enviar un Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-16 bg-texto text-fondo/70">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-display text-3xl mb-4 tracking-wider">SACRA SIT MIHI LUX</p> <!-- Mini-mantra -->
+            <p class="font-display text-2xl mb-4">LatAm Foresight Studio</p>
+            <p class="text-sm tracking-wider mb-2">Parte de Lux Animæ © 2025. Todos los derechos reservados.</p> <!-- Updated footer -->
+            <div class="flex justify-center space-x-4 text-sm">
+                <a href="https://luxanima-tawny.vercel.app/" class="hover:text-destello transition-colors" target="_blank">Lux Animæ</a>
+                <a href="https://landing-e.vercel.app/" class="hover:text-destello transition-colors" target="_blank">NectarLux Studio</a>
+                <a href="https://landing-psy.vercel.app/" class="hover:text-destello transition-colors" target="_blank">NectarLux Care</a>
+                <a href="#" class="hover:text-destello transition-colors">Términos y Condiciones</a>
+                <a href="#" class="hover:text-destello transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling para enlaces internos
+            document.querySelectorAll('a.nav-link, a.scroll-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Solo prevenir el comportamiento por defecto si es un enlace interno de la misma página
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            const navHeader = document.getElementById('nav-header');
+            const headerTitle = navHeader.querySelector('h4');
+            const navLinks = navHeader.querySelectorAll('nav a');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    // Cuando se hace scroll, el header se vuelve sólido y el texto oscuro
+                    navHeader.classList.remove('bg-transparent');
+                    navHeader.classList.add('bg-fondo/80', 'shadow-md', 'backdrop-blur-sm');
+                    headerTitle.classList.remove('text-white');
+                    headerTitle.classList.add('text-texto');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-texto');
+                    });
+                } else {
+                    // Cuando está en la parte superior, el header es transparente y el texto blanco
+                    navHeader.classList.remove('bg-fondo/80', 'shadow-md', 'backdrop-blur-sm');
+                    navHeader.classList.add('bg-transparent');
+                    headerTitle.classList.remove('text-texto');
+                    headerTitle.classList.add('text-white');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-texto');
+                        link.classList.add('text-white');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
